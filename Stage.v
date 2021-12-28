@@ -31,15 +31,16 @@ Revision History
 2017.02.15: Started by Sunwoo Kim
 *******************************************************************************/
 
-module Stage(nrst,clk,bf_en,cnt,inReal,inImag, valid, outReal,outImag);
-parameter BW=16;
-parameter N =32;
-
-input 			nrst,clk,bf_en;
-input [BW-2:0] 	inReal,inImag;
-input [5:0]    	cnt;
-input 			valid;
-output[BW-1:0] 	outReal,outImag;
+module Stage #(
+	parameter BW=16;
+	parameter N =32;
+)(
+	input 			nrst,clk,bf_en;
+	input [BW-2:0] 	inReal,inImag;
+	input [5:0]    	cnt;
+	input 			valid;
+	output[BW-1:0] 	outReal,outImag;
+)
 
 reg	 [BW-2:0] rReal,rImag;
 

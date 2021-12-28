@@ -31,14 +31,15 @@ Revision History
 2017.02.15: Started by Sunwoo Kim
 *******************************************************************************/
 
-module Stage6(nrst,clk,bf_en,inReal,inImag,valid,outReal,outImag);
-parameter BW=15;
-parameter N =1;
-
-input 			nrst,clk,bf_en;
-input [BW-2:0] 	inReal,inImag;
-input 			valid;
-output[BW-1:0] 	outReal,outImag;
+module Stage6 #(
+    parameter BW = 15;
+    parameter N = 1;
+)(
+    input 			    nrst,clk,bf_en;
+    input [BW-2:0]   inReal,inImag;
+    input               valid;
+    output[BW-1:0] 	outReal,outImag;
+)
 
 reg	  [BW-2:0] 	rReal,rImag;
 
